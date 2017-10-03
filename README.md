@@ -55,5 +55,5 @@ python convert_gates_2_array.py -f output_path
 The memory array will be printed, for example:
 
 In addition, two images will be created:
-- Graphic discription of the logic execution in the memory. The table drawn in this image represents the memory array. Each circle is a gate port (input or output). Inputs are denoted with the letters A-C and outputs are denoted with E. the number following the letter identifies the gate. Each clock cycle is marked with a different color.
+- Graphic description of the logic execution in the memory. The table drawn in this image represents the memory array. Each circle is a gate port (input or output). Inputs are denoted with the letters A-C and outputs are denoted with E. the number following the letter identifies the gate. Each clock cycle is marked with a different color.
 - Clock cycle legend.
