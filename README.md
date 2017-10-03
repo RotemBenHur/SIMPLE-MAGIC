@@ -14,6 +14,16 @@ make
 make install
 ```
 3. [ABC Synthesis Tool](https://bitbucket.org/alanmi/abc)
+4. The following Python packages (for graphic description of the solution):
+- tk
+```sh
+apt-get install python-tk
+```
+- matplotlib
+```sh
+apt-get install python-matplotlib
+```
+- [OpenCV](http://docs.opencv.org/2.4/doc/tutorials/introduction/linux_install/linux_install.html)
 
 ## Manual
 1. Configure: in the file simple_conf.cfg you will find the following content:
