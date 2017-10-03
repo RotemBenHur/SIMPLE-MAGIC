@@ -47,3 +47,13 @@ Change the parameters according to your needs.
 ```sh
 python simple_main.py
 ```
+3. Parse:
+When Z3 finishes running and output_path is created, run:
+```sh
+python convert_gates_2_array.py -f output_path
+```
+The memory array will be printed, for example:
+
+In addition, two images will be created:
+- Graphic discription of the logic execution in the memory. The table drawn in this image represents the memory array. Each circle is a gate port (input or output). Inputs are denoted with the letters A-C and outputs are denoted with E. the number following the letter identifies the gate. Each clock cycle is marked with a different color.
+- Clock cycle legend.
