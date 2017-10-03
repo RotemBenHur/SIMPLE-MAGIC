@@ -60,4 +60,4 @@ In addition, two images will be created:
 ![Alt text](images/full_adder_1bit_nor2_Z3output_table.png?raw=true "Title")
 - Clock cycle legend.
 
-![Alt text](images/full_adder_1bit_nor2_Z3output_legend.png?raw=true "Title2")
+![Alt text](images/full_adder_1bit_nor2_Z3output_legend.png?raw=true "Title2") 
