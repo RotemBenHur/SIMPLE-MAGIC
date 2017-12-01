@@ -1,3 +1,0 @@
-GATE inv1	1	O=!a;		PIN * INV 1 999 0.9 0.3 0.9 0.3
-GATE nor2	2	O=!(a+b);	PIN * INV 1 999 1.4 0.5 1.4 0.5
-GATE nor3       3       O=!(a+b+c);     PIN * INV 1 999 2.4 0.7 2.4 0.7
