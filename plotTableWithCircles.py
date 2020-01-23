@@ -53,8 +53,8 @@ def plotTableWithCircles(numberOfColumns, numberOfRows, tableCells, filepath):
                 titleColor = tuple(255 - x for x in circleColor)
 
                 # Calculate center of current circle.
-                circleCenterX = cellColumn * cellWidth + i * 2*CIRCLE_RADIUS + CIRCLE_RADIUS
-                circleCenterY = cellRow * cellHeight + j * 2*CIRCLE_RADIUS + CIRCLE_RADIUS
+                circleCenterY = cellColumn * cellWidth + i * 2*CIRCLE_RADIUS + CIRCLE_RADIUS
+                circleCenterX = cellRow * cellHeight + j * 2*CIRCLE_RADIUS + CIRCLE_RADIUS
 
                 # Draw circle.
                 img = cv2.circle(img, (circleCenterX, circleCenterY), CIRCLE_RADIUS, circleColor, -1)
