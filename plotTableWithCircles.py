@@ -26,15 +26,15 @@ def plotTableWithCircles(numberOfColumns, numberOfRows, tableCells, filepath):
     tableHeight = numberOfRows * cellHeight
 
     # Create a white image
-    img = np.empty((tableHeight, tableWidth, 3), np.uint8)
+    img = np.empty((tableWidth, tableHeight, 3), np.uint8)
     img[:] = 255
 
     # Plot table.
     for i in range(0, tableWidth, cellWidth):
-        img = cv2.line(img, (i, 0), (i, tableHeight - 1), (0, 0, 0), 1)
+        img = cv2.line(img, (0, i), (tableHeight - 1, i), (0, 0, 0), 1)
 
     for j in range(0, tableHeight, cellHeight):
-        img = cv2.line(img, (0, j), (tableWidth - 1, j), (0, 0, 0), 1)
+        img = cv2.line(img, (j, 0), (j, tableWidth - 1), (0, 0, 0), 1)
 
     # Plot circles.
     for cell, circles in tableCells.items():
@@ -53,8 +53,8 @@ def plotTableWithCircles(numberOfColumns, numberOfRows, tableCells, filepath):
                 titleColor = tuple(255 - x for x in circleColor)
 
                 # Calculate center of current circle.
-                circleCenterY = cellColumn * cellWidth + i * 2*CIRCLE_RADIUS + CIRCLE_RADIUS
-                circleCenterX = cellRow * cellHeight + j * 2*CIRCLE_RADIUS + CIRCLE_RADIUS
+                circleCenterX = cellColumn * cellWidth + i * 2*CIRCLE_RADIUS + CIRCLE_RADIUS
+                circleCenterY = cellRow * cellHeight + j * 2*CIRCLE_RADIUS + CIRCLE_RADIUS
 
                 # Draw circle.
                 img = cv2.circle(img, (circleCenterX, circleCenterY), CIRCLE_RADIUS, circleColor, -1)
@@ -77,12 +77,12 @@ def plotTableWithCircles(numberOfColumns, numberOfRows, tableCells, filepath):
         img = np.insert(img, 0, (255, 255, 255), 1)
 
     # Add axis numbers.
-    for i in range(int(numberOfColumns)):
+    for i in range(int(numberOfRows)):
         indexText = '{index}'.format(index=i+1)
         ((textWidth, textHeight), _) = cv2.getTextSize(indexText, FONT_FACE, FONT_SCALE, FONT_THICKNESS)
         cv2.putText(img, indexText, (axisWidth + i * cellWidth + cellWidth // 2 - textWidth // 2, axisHeight - TEXT_MARGIN), FONT_FACE, FONT_SCALE, (0, 0, 0), FONT_THICKNESS, cv2.LINE_AA)
 
-    for j in range(int(numberOfRows)):
+    for j in range(int(numberOfColumns)):
         indexText = '{index}'.format(index=j+1)
         ((textWidth, textHeight), _) = cv2.getTextSize(indexText, FONT_FACE, FONT_SCALE, FONT_THICKNESS)
         cv2.putText(img, indexText, (axisWidth // 2 - textWidth // 2, axisHeight + j * cellHeight + cellHeight // 2 + textHeight // 2), FONT_FACE, FONT_SCALE, (0, 0, 0), FONT_THICKNESS, cv2.LINE_AA)
